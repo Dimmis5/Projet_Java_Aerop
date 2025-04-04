@@ -1,0 +1,62 @@
+package org.example;
+
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+    }
+}
+
+class Personne {
+    protected int identifiant;
+    protected String nom;
+    protected String adresse;
+    protected String contact;
+
+    public Personne(int identifiant, String nom, String adresse, String contact) {
+        this.identifiant = identifiant;
+        this.nom = nom;
+        this.adresse = adresse;
+        this.contact = contact;
+    }
+}
+
+class Employe extends Personne {
+    protected int NumeroEmploye;
+    protected String DateEmbauche;
+
+    public Employe(int identifiant, String nom, String adresse, String contact, int NumeroEmploye, String DateEmbauche) {
+        super(identifiant, nom, adresse, contact);
+        this.NumeroEmploye = NumeroEmploye;
+        this.DateEmbauche = DateEmbauche;
+    }
+}
+
+class Passager extends Personne {
+    protected int passeport;
+
+    public Passager(int identifiant, String nom, String adresse, String contact, int passeport) {
+        super(identifiant, nom, adresse, contact);
+        this.passeport = passeport;
+    }
+}
+
+class Pilote extends Employe {
+    protected String Licence;
+    protected int heuresDeVol;
+
+    public Pilote(int identifiant, String nom, String adresse, String contact, int NumeroEmploye, String DateEmbauche, String Licence, int heuresDeVol) {
+        super(identifiant, nom, adresse, contact, NumeroEmploye, DateEmbauche);
+        this.Licence = Licence;
+        this.heuresDeVol = heuresDeVol;
+    }
+}
+
+class PersonnelCabine extends Employe {
+    String qualification;
+
+    public PersonnelCabine(int identifiant, String nom, String adresse, String contact, int NumeroEmploye, String DateEmbauche, String qualification) {
+        super(identifiant, nom, adresse, contact, NumeroEmploye, DateEmbauche);
+        this.qualification = qualification;
+    }
+}
